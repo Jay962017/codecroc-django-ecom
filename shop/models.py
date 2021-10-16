@@ -55,3 +55,10 @@ class Order(models.Model):
     total = models.DecimalField(
         '總金額', max_digits=6, decimal_places=2, default=0.00)
     status = models.CharField('訂單狀態', max_length=63, null=True, blank=True)
+
+    def __str__(self):
+        return self.customer
+
+    class Meta:
+        verbose_name = '客戶'
+        verbose_name_plural = '客戶'
